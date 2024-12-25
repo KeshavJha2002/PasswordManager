@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { useRouter } from 'expo-router';
 
-const CreateNewCard: React.FC<{ navigation: any }> = ({navigation}) => {
+const CreateNewCard: React.FC = () => {
   const [scaleValue] = useState(new Animated.Value(1));
   const router = useRouter();
 
