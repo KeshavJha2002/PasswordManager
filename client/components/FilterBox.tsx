@@ -9,7 +9,7 @@ const FilterBox:React.FC = () => {
   return(
   <View>
     <Pressable onPress={handleFilterPress}>
-      <Icon name="filter-list" size={30} color="black" /> 
+      <Icon name="filter-list" size={28} color="black" /> 
     </Pressable>
   </View>
 )};
