@@ -3,7 +3,12 @@ import { Text, Pressable, View, Alert, StyleSheet, Animated } from 'react-native
 import { button, textColors } from '../constants/Colors';
 import { buttonText } from '../constants/FontSize';
 
-const GenerateButton: React.FC = () => {
+type GenerateButtonProp = {
+  title: string,
+  handleForm: () => void;
+}
+
+const GenerateButton: React.FC<GenerateButtonProp> = ({ title, handleForm }) => {
   const [scaleValue] = useState(new Animated.Value(1));
 
   const onPressIn = () => {
@@ -24,7 +29,7 @@ const GenerateButton: React.FC = () => {
   };
 
   const onClick = () => {
-    Alert.alert('Button Pressed!');
+    handleForm();
   };
 
   return (
@@ -39,7 +44,7 @@ const GenerateButton: React.FC = () => {
           onPressOut={onPressOut}
           onPress={onClick}
         >
-          <Text style={styles.text}>Generate</Text>
+          <Text style={styles.text}>{title}</Text>
         </Pressable>
       </Animated.View>
     </View>

@@ -14,11 +14,15 @@ const SearchBox: React.FC = () => {
     setSearchText('');
   }
 
-// TODO => When the searchText is not empty, and the input box is on, give a cross icon
+  const goSearch = () => {
+    Keyboard.dismiss();
+  }
+
   return (
     <TouchableWithoutFeedback onPress={dismissKeyboard}>
       <View style={styles.container}>
-        <Icon name="search" size={22} color="#9e9e9e" style={styles.icon} />
+        {!searchText && <Icon name="search" size={22} color="#9e9e9e" style={styles.icon} />}
+        {searchText && <Icon name="" size={22} color="#9e9e9e" style={styles.icon} />}
         <TextInput
           style={styles.input}
           placeholder="Search Titles..."
@@ -27,6 +31,7 @@ const SearchBox: React.FC = () => {
           onChangeText={setSearchText}
         />
         {searchText && <Icon name="close" size={22} color="#9e9e9e" style={styles.icon} onPress={deleteSearch}/>}
+        {searchText && <Icon name="search" size={22} color="#9e9e9e" style={styles.icon} onPress={goSearch}/>}
       </View>
     </TouchableWithoutFeedback>
   );

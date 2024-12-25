@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 16,
+    padding: 28,
     borderRadius: 10,
     backgroundColor: '#FFE3E3', // Light pink background
     borderWidth: 1,
