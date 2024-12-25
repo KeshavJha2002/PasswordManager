@@ -8,7 +8,7 @@ const FilterBox:React.FC = () => {
   }
   return(
   <View>
-    <Pressable onPress={handleFilterPress}>
+    <Pressable onPress={handleFilterPress} style={{paddingRight: 8}}>
       <Icon name="filter-list" size={28} color="black" /> 
     </Pressable>
   </View>

@@ -10,6 +10,10 @@ const SearchBox: React.FC = () => {
     Keyboard.dismiss();
   };
 
+  const deleteSearch = () => {
+    setSearchText('');
+  }
+
 // TODO => When the searchText is not empty, and the input box is on, give a cross icon
   return (
     <TouchableWithoutFeedback onPress={dismissKeyboard}>
@@ -22,6 +26,7 @@ const SearchBox: React.FC = () => {
           value={searchText}
           onChangeText={setSearchText}
         />
+        {searchText && <Icon name="close" size={22} color="#9e9e9e" style={styles.icon} onPress={deleteSearch}/>}
       </View>
     </TouchableWithoutFeedback>
   );
@@ -38,8 +43,7 @@ const styles = StyleSheet.create({
     flexBasis: '85%'
   },
   icon: {
-    paddingRight: 8,
-    paddingLeft: 8,
+    padding: 8
   },
   input: {
     flex: 1,
